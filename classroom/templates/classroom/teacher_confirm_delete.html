@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HOME PAGE</title>
+</head>
+<body>
+    <h1>ARE YOU SURE TO DELETE THIS TEACHER</h1>
+    <h2>{{ teacher }}</h2>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Confirm">
+    </form>
+    <a href="{% url 'classroom:list_teacher' %}">Go back</a>
+</body>
+</html>

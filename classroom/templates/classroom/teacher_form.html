@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HOME PAGE</title>
+</head>
+<body>
+    <h1>WELCOME TO TEACHER FORM PAGE</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit">
+    </form>
+    {% if teacher %}
+        <a href="{% url 'classroom:detail_teacher' teacher.id %}">Go back</a>
+    {% else %}
+        <a href="{% url 'classroom:home' %}">Go back</a>
+    {% endif %}
+</body>
+</html>

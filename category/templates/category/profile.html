@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>USER PROFILE</title>
+</head>
+<body>
+    <h1>User profile page</h1>
+    {% for bookinstance in bookinstance_list %}
+        <p>
+            {{ bookinstance }}
+        </p>
+    {% endfor %}
+    <a href="{% url 'index' %}">Go back</a>
+</body>
+</html>

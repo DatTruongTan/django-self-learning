@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Index</title>
+</head>
+<body>
+    <h1>HOME PAGE</h1>
+    
+    {% if user.is_authenticated %}
+            <p>Welcome
+                <a href="{% url 'profile' %}">
+                    {{ user.get_username }}
+                </a>
+            </p>
+            <a href="{% url 'logout' %}?next={{ request.path }}">Log out</a>
+    {% else %}
+        <a href="{% url 'login' %}?next={{ request.path }}">Login</a>
+        <a href="{% url 'signup' %}">Sign Up</a>
+    {% endif %} 
+    
+    <p>Total of book: {{ num_book }}</p>
+    <p>Num available: {{ num_instances_available }}</p>
+    <div>
+        <a href="{% url 'create_book' %}">Create new book</a>
+    </div>
+</body>
+</html>

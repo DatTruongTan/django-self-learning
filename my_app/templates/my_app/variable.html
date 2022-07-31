@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+    </br>
+    <h1>Variable HTML File Connected !</h1>
+    <h2>My name is {{ first_name | upper}} {{ last_name | capfirst}}</h2>
+
+    {% for item in some_list %}
+        <h2>{{ item }}</h2>
+    {% endfor %}
+
+    {% for k,v in some_dict.items %}
+        <h2>{{ k }}</h2>
+    {% endfor %}
+
+    {% if user_logged_in %}
+        <h3>User logged</h3>
+    {% else %}
+        <h3>User not logged</h3>
+    {% endif %}
+
+    <h2>
+        <a href="{% url 'my_app:example' %}">Go back</a>
+    </h2>
+    </br>
+{% endblock %}
